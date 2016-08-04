@@ -1,0 +1,32 @@
+<div data-ng-controller="WorkCtrl" ng-init="init()" class="container-fluid">
+   <h1 class="page-header" ><span ng-bind="authenticated.fullName"> Works </span></h1>
+   <div class="row">
+      <table class="table table-condensed">
+         <thead>
+            <tr><th>date</th><th>time</th></tr>
+         </thead>
+         <tr ng-repeat="item in items">
+            <td ng-bind="item.dt"></td>
+            <td ng-bind="item.time"></td>
+            <td ng-bind="item.notes"></td>
+         </tr>
+      </table>
+   </div>
+   <div class="row">
+      <form ng-submit="add()" name="form">
+         <div class="form-group">
+            <label for="dt">username</label>
+            <input ng-model="item.dt" name="dt" type="date" class="form-control" id="dt" placeholder="Date">
+         </div>
+         <div class="form-group">
+            <label for="time">password</label>
+            <input ng-model="item.time" name="time" type="text" class="form-control" id="time" placeholder="Time">
+         </div>
+         <div class="form-group">
+            <label for="time">notes</label>
+            <input ng-model="item.notes" name="time" type="text" class="form-control" id="notes" placeholder="Notes">
+         </div>
+         <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+   </div>
+</div>
